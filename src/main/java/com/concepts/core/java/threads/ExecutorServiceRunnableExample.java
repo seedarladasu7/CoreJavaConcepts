@@ -19,7 +19,11 @@ public class ExecutorServiceRunnableExample {
                 e.printStackTrace();
             }
         };
-         
+        
+        //ExecutorService executor = Executors.newFixedThreadPool(4); 
+        //ExecutorService executor = Executors.newSingleThreadExecutor() ;
+        //ExecutorService executor = Executors.newCachedThreadPool();  
+
         //Executor service instance
         ExecutorService executor = Executors.newFixedThreadPool(10);
          

@@ -2,14 +2,14 @@ package com.concepts.core.java.java8.functionalinterface;
 
 import java.util.function.Consumer;
 
-class Employ {
+class Employee {
 	private int id;
 	private String name;
 	
-	public Employ() {
+	public Employee() {
 		super();
 	}
-	public Employ(int id, String name) {
+	public Employee(int id, String name) {
 		super();
 		this.name = name;
 		this.id = id;
@@ -36,24 +36,23 @@ class Employ {
 
 public class ConsumerTest {
 	public static void main(String[] args) {
-		Consumer<Employ> empNames = (e -> {
+		Consumer<Employee> empNames = (e -> {
 			e.setId(101);
-			e.setName("Dasu Seedarla");
-			
+			e.setName("Dasu Seedarla");			
 			System.out.println(e);
 		});
-		Employ e1 = new Employ();
+		Employee e1 = new Employee();
 		empNames.accept(e1);
 		//System.out.println(e1);
 		//System.out.println(e1.toString());
 		
-		Employ e2 = new Employ();
-		Consumer<Employ> empNames2 = getEmpConsumer();
+		Employee e2 = new Employee();
+		Consumer<Employee> empNames2 = getEmpConsumer();
 		empNames2.accept(e2);		
 	}
 	
-	private static Consumer<Employ> getEmpConsumer() {
-		Consumer<Employ> empNames = (e -> {
+	private static Consumer<Employee> getEmpConsumer() {
+		Consumer<Employee> empNames = (e -> {
 			e.setId(102);
 			e.setName("Chinna Seedarla");
 			System.out.println(e);

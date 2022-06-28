@@ -6,7 +6,7 @@ public class ReverseArrayElements {
 
 	public static void main(String[] args) {
 		ReverseArrayElements obj = new ReverseArrayElements();
-		int[] arr = {10,100,20,30,0, 40,50,60,200};
+		int[] arr = {10, 100, 20, 30, 0, 40, 50, 60, 200};
 		System.out.println("Actual array: "+Arrays.toString(arr));
 		int len = arr.length;
 		obj.withMulArray(arr, len);

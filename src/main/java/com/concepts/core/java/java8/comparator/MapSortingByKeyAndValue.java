@@ -25,16 +25,16 @@ public class MapSortingByKeyAndValue {
 		System.out.println("Unsorted Map : " + unSortedMap);
 
 		LinkedHashMap<String, Integer> sortedMap = new LinkedHashMap<>();
-		unSortedMap.entrySet().stream().sorted(Map.Entry.comparingByValue())
+		unSortedMap.entrySet().stream().sorted(Map.Entry.comparingByKey())
 				.forEachOrdered(x -> sortedMap.put(x.getKey(), x.getValue()));
 
-		System.out.println("Sorted Map   : " + sortedMap);
+		System.out.println("Sorted Map (SortByKey)  : " + sortedMap);
 
 		LinkedHashMap<String, Integer> reverseSortedMap = new LinkedHashMap<>();
-		unSortedMap.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+		unSortedMap.entrySet().stream().sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
 				.forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
 
-		System.out.println("Reverse Sorted Map   : " + reverseSortedMap);
+		System.out.println("Reverse Sorted Map (SortByKey)  : " + reverseSortedMap);
 	}
 
 	private static void sortByValueJava8Stream() {
@@ -43,16 +43,16 @@ public class MapSortingByKeyAndValue {
 		System.out.println("Unsorted Map : " + unSortedMap);
 
 		LinkedHashMap<String, Integer> sortedMap = new LinkedHashMap<>();
-		unSortedMap.entrySet().stream().sorted(Map.Entry.comparingByKey())
+		unSortedMap.entrySet().stream().sorted(Map.Entry.comparingByValue())
 				.forEachOrdered(x -> sortedMap.put(x.getKey(), x.getValue()));
 
-		System.out.println("Sorted Map   : " + sortedMap);
+		System.out.println("Sorted Map (SortByValue)  : " + sortedMap);
 
 		LinkedHashMap<String, Integer> reverseSortedMap = new LinkedHashMap<>();
-		unSortedMap.entrySet().stream().sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()))
+		unSortedMap.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
 				.forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
 
-		System.out.println("Reverse Sorted Map   : " + reverseSortedMap);
+		System.out.println("Reverse Sorted Map (SortByValue)  : " + reverseSortedMap);
 	}
 
 	private static Map<String, Integer> getUnSortedMap() {

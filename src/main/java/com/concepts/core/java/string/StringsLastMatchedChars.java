@@ -30,14 +30,16 @@ public class StringsLastMatchedChars {
 		for (int i = 0; i < len; i++) {
 			if (s11.charAt(i) == s22.charAt(i)) {
 				tempNChars = tempNChars.append(s11.charAt(i));
-			} else
+			} else {
 				break;
+			}
 		}
 
 		for (int i = tempNChars.length() - 1; i >= 0; i--) {
 			lastNChars = lastNChars.append(tempNChars.charAt(i));
 		}
-
+		
+		System.out.println("tempNChars n chars:: " + tempNChars);		
 		System.out.println("last n chars:: " + lastNChars);
 	}
 }

@@ -8,7 +8,7 @@ public class ReverseStringsList {
 	
 	public static void main(String[] args) {
 		
-		ReverseStringsList.orderingStringArrayElements();
+		ReverseStringsList.reverseStringsArray();
 	}
 
 	public static void reverseStringsArray() {

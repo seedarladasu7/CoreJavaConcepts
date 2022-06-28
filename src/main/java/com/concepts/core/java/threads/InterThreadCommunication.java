@@ -31,8 +31,8 @@ class TestProgram {
 		notify();
 	}
 }
-class Producer {}
-class Consumer {}
+//class Producer {}
+//class Consumer {}
 public class InterThreadCommunication {
 	
 	public static void main(String[] args) {

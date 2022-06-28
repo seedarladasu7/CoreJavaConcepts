@@ -10,6 +10,14 @@ public class PredicateTest {
 		Predicate<Integer> oddNums = (num -> num%2 != 0);
 		Predicate<Integer> pTiveNums = (num -> num > 0);
 		
+		Predicate<Integer> pTiveNums123 = new Predicate<Integer> () {
+			@Override
+			public boolean test(Integer t) {
+				// TODO Auto-generated method stub
+				return false;
+			}			
+		};
+		
 		int[] arr = {2,1,5,2,-10,77,22,3,5,7,3, -4, };
 		
 		System.out.println("Even Numbers: "+ filter(arr, evenNums));

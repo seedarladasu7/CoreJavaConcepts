@@ -26,9 +26,9 @@ public class SortMapElements {
 		// construct a new map from the stream
 		Map<String, String> map = stream.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 
-		Comparator<Map.Entry<String, String>> valueComparator = Map.Entry.comparingByKey(Collections.reverseOrder());
+		Comparator<Map.Entry<String, String>> keyComparator = Map.Entry.comparingByKey(Collections.reverseOrder());
 		
-		map.entrySet().stream().sorted(valueComparator).forEachOrdered(System.out::print);
+		map.entrySet().stream().sorted(keyComparator).forEachOrdered(System.out::println);
 
 		//System.out.println(map);
 	}

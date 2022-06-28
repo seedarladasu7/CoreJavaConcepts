@@ -17,7 +17,10 @@ public class RemoveIfExample {
 		list.add("BSc");
 		list.add("MPC");
 		
-		//withArrayDeque(list);
+		withArrayDeque(list);
+		
+		System.out.println("");
+		
 		withList(list);
 	}
 	

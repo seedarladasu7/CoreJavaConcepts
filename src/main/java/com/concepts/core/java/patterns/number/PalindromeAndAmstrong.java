@@ -14,7 +14,7 @@ public class PalindromeAndAmstrong {
 		boolean primeNoFlag = false; 
 		
 		
-		// Palyndrome number check
+		// Palindrome number check
 		while(num > 0) {
 			r = num%10;
 			num = num/10;
