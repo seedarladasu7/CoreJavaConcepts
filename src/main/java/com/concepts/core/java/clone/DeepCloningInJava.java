@@ -28,7 +28,6 @@ class Student1 implements Cloneable {
 	}
 
 	// Overriding clone() method to create a deep copy of an object.
-
 	protected Object clone() throws CloneNotSupportedException {
 		Student1 student = (Student1) super.clone();
 		student.course = (Course1) course.clone();
