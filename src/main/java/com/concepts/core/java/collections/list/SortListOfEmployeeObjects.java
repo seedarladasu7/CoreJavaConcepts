@@ -40,6 +40,7 @@ public class SortListOfEmployeeObjects {
 		empList.sort(comp.reversed());
 		System.out.println("empList: "+empList);
 		
+		System.out.println("##############-----#############");
 		Comparator<Employee> comp2 =  Comparator.comparing(Employee::getEmpId);
 		empList.sort(comp2);
 		System.out.println("empList: "+empList);

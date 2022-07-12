@@ -54,12 +54,12 @@ public class SortMapKeys {
 	}
 
 	private static Map<String, Integer> getUnSortedMap() {
-		Map<String, Integer> unsortMap = new HashMap<>();
-		unsortMap.put("alex", 1);
-		unsortMap.put("david", 2);
-		unsortMap.put("elle", 3);
-		unsortMap.put("charles", 4);
-		unsortMap.put("brian", 5);
-		return unsortMap;
+		Map<String, Integer> unsortedMap = new HashMap<>();
+		unsortedMap.put("alex", 1);
+		unsortedMap.put("david", 2);
+		unsortedMap.put("elle", 3);
+		unsortedMap.put("charles", 4);
+		unsortedMap.put("brian", 5);
+		return unsortedMap;
 	}
 }
