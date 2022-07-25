@@ -14,6 +14,6 @@ public class CreateObjectUsingReflection {
 	}
 
 	private void showString() {
-		System.out.println("Hello this is showString method");
+		System.out.println("Hello this is showString method: " + this.value);
 	}
 }

@@ -2,21 +2,25 @@ package com.concepts.core.java.test.hackerrank;
 
 import java.util.Stack;
 
-public class BracesBalanceTest {
+class Parser {
 
-	public static boolean isBalanced(String expression) {
+	public boolean isBalanced(String expression) {
 
 		Stack<Character> openBrackets = new Stack<Character>();
+		
+		char[] chrArr = new char[0];
+		if(expression != null && expression.length() > 0) {
+			chrArr = expression.toCharArray();
+		}
 
-		for (Character c : expression.toCharArray()) {
-			if (isOpen(c)) {
-				openBrackets.push(c);
+		for (Character ch : chrArr) {
+			if (isOpen(ch)) {
+				openBrackets.push(ch);
 			} else if (openBrackets.isEmpty()) {
 				return false;
 			} else {
 				Character open = openBrackets.pop();
-
-				if (!isPair(open, c)) {
+				if (!isPair(open, ch)) {
 					return false;
 				}
 			}
@@ -47,19 +51,26 @@ public class BracesBalanceTest {
 		}
 	}
 
+}
+
+public class BracesBalanceTest {
 	public static void main(String[] args) {
 
 		String[] expArr = { "{}()", "{()}", "({()})" };
-		String[] expArr1 = {"{}(", "({)}", "((", "}{", "({})"};
+		String[] expArr2 = { "({()})" };
+		String[] expArr1 = { "{}(", "({)}", "((", "}{", "({})" };
 
-		for (int i = 0; i < expArr1.length; i++) {
+		Parser sol = new Parser();
 
-			boolean answer = isBalanced(expArr1[i]);
+		for (int i = 0; i < expArr.length; i++) {
 
-			if (answer)
+			boolean answer = sol.isBalanced(expArr[i]);
+
+			if (answer) {
 				System.out.println("YES");
-			else
+			} else {
 				System.out.println("NO");
+			}
 		}
 
 	}
