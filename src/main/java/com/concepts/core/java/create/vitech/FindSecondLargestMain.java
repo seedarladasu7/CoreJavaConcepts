@@ -5,8 +5,8 @@ import java.util.Arrays;
 public class FindSecondLargestMain {
 	public static void main(String args[]) {
 		int[] arr1 = { 7, 5, 6, 1, 4, 2 };
-		//int secondHighest = findSecondLargestNumberInTheArray(arr1);
-		//System.out.println("Second largest element in the array : " + secondHighest);
+		int secondHighest = findSecondLargestNumberInTheArray(arr1);
+		System.out.println("Second largest element in the array : " + secondHighest);
 
 		findSecondLargestNumberInTheArrayJava8(arr1);
 
@@ -27,9 +27,10 @@ public class FindSecondLargestMain {
 
 				// highest element to current element
 				highest = array[i];
-			} else if (array[i] > secondHighest && array[i] != highest)
+			} else if (array[i] > secondHighest && array[i] != highest) {
 				// Just replace the second highest 
 				secondHighest = array[i];
+			}
 		}
 
 		// After exiting the loop, secondHighest now represents the second

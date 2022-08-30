@@ -8,10 +8,15 @@ import java.util.stream.Collectors;
 
 public class EmployeeCountInADepartment {
 	public static void main(String[] args) {// from ww w . j a va2 s . com
-		Employee1[] employees = { new Employee1("J", "Red", 51000, "IT"), new Employee1("A", "Green", 71600, "IT"),
-				new Employee1("M", "Black", 35187.5, "Sales"), new Employee1("K", "Yellow", 47100.77, "Marketing"),
-				new Employee1("L", "Pink", 62001, "IT"), new Employee1("D", "Blue", 32001, "Sales"),
-				new Employee1("W", "Brown", 42361.4, "Marketing") };
+		Employee1[] employees = { 
+			new Employee1("J", "Red", 51000, "IT"), 
+			new Employee1("A", "Green", 71600, "IT"),
+			new Employee1("M", "Black", 35187.5, "Sales"), 
+			new Employee1("K", "Yellow", 47100.77, "Marketing"),
+			new Employee1("L", "Pink", 62001, "IT"), 
+			new Employee1("D", "Blue", 32001, "Sales"),
+			new Employee1("W", "Brown", 42361.4, "Marketing") 
+		};
 
 		// get List view of the Employees
 		List<Employee1> list = Arrays.asList(employees);
@@ -24,9 +29,9 @@ public class EmployeeCountInADepartment {
 		System.out.printf("%nCount of Employees by department:%n");
 		Map<String, Long> employeeCountByDepartment = list.stream()
 				.collect(Collectors.groupingBy(Employee1::getDepartment, TreeMap::new, Collectors.counting()));
-		
+
 		employeeCountByDepartment
-				.forEach((department, count) -> System.out.println(department +" has "+count+" employee(s)"));
+				.forEach((department, count) -> System.out.println(department + " has " + count + " employee(s)"));
 
 	}
 }
