@@ -16,7 +16,7 @@ public class ValidatingIPv4Addresses {
 		
 		System.out.println("=========== Invalid IP addresses ===============");
 		
-		String[] invalidIps = new String[] { "000.12.234.23.23", "666.666.23.23", ".213.123.23.32", "523.45.22.32" };
+		String[] invalidIps = new String[] { "000.12.234.23.23", "666.666.23.23", ".213.123.23.32", "523.45.22.32.", "I.Am.not.an.ip" };
 		for (int i = 0; i < invalidIps.length; i++) {
 			validate(invalidIps[i]);
 		}

@@ -1,5 +1,7 @@
 package com.concepts.core.java.test.hackerrank;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 class Parser {
@@ -55,23 +57,23 @@ class Parser {
 
 public class BracesBalanceTest {
 	public static void main(String[] args) {
-
 		String[] expArr = { "{}()", "{()}", "({()})" };
-		String[] expArr2 = { "({()})" };
+		String[] expArr2 = { "({()})", "({)}" };
 		String[] expArr1 = { "{}(", "({)}", "((", "}{", "({})" };
 
 		Parser sol = new Parser();
 
-		for (int i = 0; i < expArr.length; i++) {
-
-			boolean answer = sol.isBalanced(expArr[i]);
-
+		List<String> resList = new ArrayList<>();
+		for (int i = 0; i < expArr2.length; i++) {
+			boolean answer = sol.isBalanced(expArr2[i]);
 			if (answer) {
-				System.out.println("YES");
+				//System.out.println("YES");
+				resList.add("YES");
 			} else {
-				System.out.println("NO");
+				//System.out.println("NO");
+				resList.add("NO");
 			}
-		}
-
+		}		
+		System.out.println(resList);
 	}
 }
