@@ -12,7 +12,7 @@ class Parser {
 		
 		char[] chrArr = new char[0];
 		if(expression != null && expression.length() > 0) {
-			chrArr = expression.toCharArray();
+			chrArr = expression.toCharArray();			
 		}
 
 		for (Character ch : chrArr) {
@@ -57,15 +57,18 @@ class Parser {
 
 public class BracesBalanceTest {
 	public static void main(String[] args) {
+		
 		String[] expArr = { "{}()", "{()}", "({()})" };
-		String[] expArr2 = { "({()})", "({)}" };
 		String[] expArr1 = { "{}(", "({)}", "((", "}{", "({})" };
+		String[] expArr2 = { "({()})", "({)}" };
+		String[] expArr3 = { "{}(]" };
+		String[] expArr4 = { "[{}]", "[{]}" };
 
 		Parser sol = new Parser();
 
 		List<String> resList = new ArrayList<>();
-		for (int i = 0; i < expArr2.length; i++) {
-			boolean answer = sol.isBalanced(expArr2[i]);
+		for (int i = 0; i < expArr4.length; i++) {
+			boolean answer = sol.isBalanced(expArr4[i]);
 			if (answer) {
 				//System.out.println("YES");
 				resList.add("YES");

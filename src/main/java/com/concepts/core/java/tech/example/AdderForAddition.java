@@ -11,6 +11,7 @@ class Adder extends Calculator1 {
 		return a+b;
 	}	
 }
+
 public class AdderForAddition {
 	public static void main(String[] args) {
 		int a, b;
