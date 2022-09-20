@@ -1,20 +1,27 @@
 package com.concepts.core.java.test.hackerrank;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
 class Parser {
 
-	public boolean isBalanced(String expression) {
-
-		Stack<Character> openBrackets = new Stack<Character>();
-		
-		char[] chrArr = new char[0];
-		if(expression != null && expression.length() > 0) {
-			chrArr = expression.toCharArray();			
+	public List<String> isBalanced(List<String> expressionArr) {
+		List<String> strList = new ArrayList<>();
+		for (String expression : expressionArr) {
+			char[] chrArr = new char[0];
+			if (expression != null && expression.length() > 0) {
+				chrArr = expression.toCharArray();
+			}
+			boolean flag = isStringBalanced(chrArr);
+			strList.add(flag ? "YES" : "NO");
 		}
+		return strList;
+	}
 
+	private static boolean isStringBalanced(char[] chrArr) {
+		Stack<Character> openBrackets = new Stack<Character>();
 		for (Character ch : chrArr) {
 			if (isOpen(ch)) {
 				openBrackets.push(ch);
@@ -27,7 +34,6 @@ class Parser {
 				}
 			}
 		}
-
 		// If we have more open brackets than closed brackets
 		if (openBrackets.size() > 0) {
 			return false;
@@ -52,12 +58,11 @@ class Parser {
 			return false;
 		}
 	}
-
 }
 
 public class BracesBalanceTest {
 	public static void main(String[] args) {
-		
+
 		String[] expArr = { "{}()", "{()}", "({()})" };
 		String[] expArr1 = { "{}(", "({)}", "((", "}{", "({})" };
 		String[] expArr2 = { "({()})", "({)}" };
@@ -65,18 +70,9 @@ public class BracesBalanceTest {
 		String[] expArr4 = { "[{}]", "[{]}" };
 
 		Parser sol = new Parser();
-
 		List<String> resList = new ArrayList<>();
-		for (int i = 0; i < expArr4.length; i++) {
-			boolean answer = sol.isBalanced(expArr4[i]);
-			if (answer) {
-				//System.out.println("YES");
-				resList.add("YES");
-			} else {
-				//System.out.println("NO");
-				resList.add("NO");
-			}
-		}		
+		List<String> bracesList = Arrays.asList(expArr2);
+		resList = sol.isBalanced(bracesList);
 		System.out.println(resList);
 	}
 }
