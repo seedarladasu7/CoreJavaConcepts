@@ -2,15 +2,15 @@ package com.concepts.core.java.threads;
 
 public class ProducerConsumerTest {
 	public static void main(String[] args) {
-		CubbyHole c = new CubbyHole();
-		Producer p1 = new Producer(c, 1);
-		Consumer c1 = new Consumer(c, 1);
+		SmallEnclosedSpace s = new SmallEnclosedSpace();
+		Producer p1 = new Producer(s, 1);
+		Consumer c1 = new Consumer(s, 1);
 		p1.start();
 		c1.start();
 	}
 }
 
-class CubbyHole {
+class SmallEnclosedSpace {
 	private int contents;
 	private boolean available = false;
 
@@ -40,35 +40,35 @@ class CubbyHole {
 }
 
 class Consumer extends Thread {
-	private CubbyHole cubbyhole;
+	private SmallEnclosedSpace sES;
 	private int number;
 
-	public Consumer(CubbyHole c, int number) {
-		cubbyhole = c;
+	public Consumer(SmallEnclosedSpace s, int number) {
+		sES = s;
 		this.number = number;
 	}
 
 	public void run() {
 		int value = 0;
 		for (int i = 0; i < 10; i++) {
-			value = cubbyhole.get();
+			value = sES.get();
 			System.out.println("Consumer #" + this.number + " got: " + value);
 		}
 	}
 }
 
 class Producer extends Thread {
-	private CubbyHole cubbyhole;
+	private SmallEnclosedSpace sES;
 	private int number;
 
-	public Producer(CubbyHole c, int number) {
-		cubbyhole = c;
+	public Producer(SmallEnclosedSpace s, int number) {
+		sES = s;
 		this.number = number;
 	}
 
 	public void run() {
 		for (int i = 0; i < 10; i++) {
-			cubbyhole.put(i);
+			sES.put(i);
 			System.out.println("Producer #" + this.number + " put: " + i);
 			try {
 				sleep((int) (Math.random() * 100));
