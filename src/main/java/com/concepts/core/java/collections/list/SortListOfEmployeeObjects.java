@@ -48,6 +48,11 @@ public class SortListOfEmployeeObjects {
 		empList.sort(comp2.reversed());
 		System.out.println("empList: "+empList);
 		
+		MyComparator mComp = new MyComparator();
+		empList.sort(mComp);
+		System.out.println("empList: with custom Comp: "+empList);
+		empList.sort(mComp.reversed());
+		System.out.println("empList: with custom Comp: "+empList);
 	}
 
 	private static ArrayList<Employee> getUnsortedEmployeeList() {

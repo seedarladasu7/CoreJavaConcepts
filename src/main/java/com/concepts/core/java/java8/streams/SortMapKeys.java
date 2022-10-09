@@ -1,4 +1,4 @@
-package com.concepts.core.java.collections.map;
+package com.concepts.core.java.java8.streams;
 
 import java.util.Collections;
 import java.util.Comparator;

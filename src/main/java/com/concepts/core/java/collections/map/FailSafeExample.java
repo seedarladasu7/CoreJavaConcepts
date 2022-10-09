@@ -7,7 +7,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class FailSafeExample {
 	public static void main(String args[]) {
-		// failSafeMethod1();
+		failSafeMethod1();
 		failSafeMethod2();
 	}
 
@@ -21,6 +21,8 @@ public class FailSafeExample {
 				list.add(14); // This will not print hence it has created separate copy
 			}
 		}
+		
+		System.out.println("CopyOnArrayList: " + list);
 	}
 
 	private static void failSafeMethod2() {
@@ -40,5 +42,7 @@ public class FailSafeExample {
 			System.out.println(key + " : " + map.get(key));
 			map.put("SEVEN", 7); // This will reflect in iterator. Hence, it has not created separate copy
 		}
+		
+		System.out.println("ConcurrentHashMap: " + map);
 	}
 }

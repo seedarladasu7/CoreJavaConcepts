@@ -24,11 +24,12 @@ public class SeparateEvensOddsAndPveNves {
 
 		int left = 0;
 		int right = arr.length - 1;
+		int pivot = 2;
 		while (left < right) {
-			while ((arr[left] % 2 == 0) && (left < right)) {
+			while ((arr[left] % pivot == 0) && (left < right)) {
 				left++;
 			}
-			while ((arr[right] % 2 == 1) && (left < right)) {
+			while ((arr[right] % pivot == 1) && (left < right)) {
 				right--;
 			}
 			if (left < right) {

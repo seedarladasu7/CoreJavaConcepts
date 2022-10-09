@@ -23,12 +23,12 @@ public class HashMapDemo {
 		String returned_value = (String)hash_map.put(30, "All"); 
 
 		// Verifying the returned value 
-		//System.out.println("Returned value is: " + returned_value); 
+		System.out.println("Returned value is: " + returned_value); 
 
-		// Displayin the new map 
-		//System.out.println("New map is: " + hash_map); 
+		// Displaying the new map 
+		System.out.println("New map is: " + hash_map); 
 		
-		HashMap intHashMap = new HashMap();
+		HashMap<Integer, Object> intHashMap = new HashMap<>();
 		
 		intHashMap.put(100,  200);
 		intHashMap.put(200,  400);
