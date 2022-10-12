@@ -21,7 +21,7 @@ class StringPalindorme {
 		String tempString = originalString.replaceAll("\\s+", "").toLowerCase();
 
 		return IntStream.range(0, tempString.length() / 2)
-				.allMatch(i -> tempString.charAt(i) == tempString.charAt(tempString.length() - i - 1));
+				.allMatch(i -> tempString.charAt(i) == tempString.charAt(tempString.length()-1 - i));
 
 	}
 
@@ -29,20 +29,36 @@ class StringPalindorme {
 		Scanner snr = new Scanner(System.in);
 		System.out.println("Enter the String for check:");
 		String string = snr.nextLine();
-		if (isPalindrome(string.toLowerCase()))
+		if (isPalindrome(string.toLowerCase())) {
 			System.out.println("Using java: "+ string + " is a palindrome");
-		else
+		} else {
 			System.out.println("Using java: "+ string + " is not a palindrome");
+		}		
 		
+		System.out.println("");
 		
-		
-		System.out.println("Enter the String for check:");
-		
-		if (isPalindromeJava8(string))
+		if (isPalindromeJava8(string)) {
 			System.out.println("Using java8: "+ string + " is a palindrome");
-		else
+		} else {
 			System.out.println("Using java8: "+ string + " is not a palindrome");
+		}
 		
+		System.out.println("");
+		
+		String reverseStr = "";
+	    
+	    int strLength = string.length();
+
+	    for (int i = (strLength - 1); i >= 0; i--) {
+	      reverseStr = reverseStr + string.charAt(i);
+	    }
+
+	    if (string.toLowerCase().equals(reverseStr.toLowerCase())) {
+	      System.out.println("Using normal: "+ string + " is a Palindrome String.");
+	    }
+	    else {
+	      System.out.println("Using normal: "+ string + " is not a Palindrome String.");
+	    }
 		snr.close();
 		
 	}

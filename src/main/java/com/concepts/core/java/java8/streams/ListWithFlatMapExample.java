@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MapOperations {
+public class ListWithFlatMapExample {
 
 	public static void main(String[] args) {
 

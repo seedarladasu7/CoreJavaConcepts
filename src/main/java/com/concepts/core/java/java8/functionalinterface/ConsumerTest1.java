@@ -19,13 +19,13 @@ public class ConsumerTest1 {
 				System.out.println(s);
 			}
 		};
-		Stream<String> stream = Stream.of("aaa", "bbb", "ddd", "ccc", "fff");
+		Stream<String> stream = Stream.of("aaa1", "bbb1", "ddd1", "ccc1", "fff1");
 		stream.forEach(consumer);
 
 		System.out.println("********************");
 
 		// (2) Using lambda expression, forEach method needs a Consumer interface.
-		stream = Stream.of("aaa", "bbb", "ddd", "ccc", "fff");
+		stream = Stream.of("aaa2", "bbb2", "ddd2", "ccc2", "fff2");
 		Consumer<String> consumer1 = (s) -> System.out.println(s);// The lambda expression returns a Consumer interface
 		stream.forEach(consumer1);
 		// A more direct approach
@@ -33,7 +33,7 @@ public class ConsumerTest1 {
 		System.out.println("********************");
 
 		// (3) Use method reference, method reference is also a consumer.
-		stream = Stream.of("aaa", "bbb", "ddd", "ccc", "fff");
+		stream = Stream.of("aaa3", "bbb3", "ddd3", "ccc3", "fff3");
 		Consumer consumer2 = System.out::println;
 		stream.forEach(consumer2);
 		// A more direct approach
